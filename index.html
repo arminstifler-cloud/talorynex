@@ -3,61 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Talorynex International Recruiting</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
 background:#f5f7fa;
 color:#333;
+line-height:1.6;
 }
 
 .hero{
-background:url('banner.png') center/cover no-repeat;
-height:500px;
+background:url('banner.png') center center/cover no-repeat;
+height:600px;
 position:relative;
 }
 
 .overlay{
-background:rgba(0,20,50,0.65);
+background:rgba(5,20,45,0.35);
 height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-color:white;
 padding:20px;
+color:white;
 }
 
 .logo{
-width:180px;
-margin-bottom:20px;
+width:220px;
+max-width:80%;
+margin-bottom:25px;
 background:white;
-padding:10px;
+padding:15px;
 border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero h1{
-font-size:52px;
+font-size:64px;
+font-weight:bold;
 margin-bottom:15px;
 }
 
 .hero p{
-font-size:22px;
-max-width:800px;
+font-size:26px;
+max-width:900px;
 }
 
 .container{
 max-width:1200px;
 margin:auto;
-padding:60px 20px;
+padding:70px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+color:#0d2b45;
+font-size:40px;
 }
 
 .card{
@@ -76,12 +89,16 @@ margin-bottom:15px;
 .contact{
 background:#0d2b45;
 color:white;
+padding:70px 20px;
 text-align:center;
-padding:60px 20px;
+}
+
+.contact h2{
+margin-bottom:20px;
 }
 
 .contact a{
-color:#34d6ff;
+color:#4ad9ff;
 text-decoration:none;
 font-weight:bold;
 }
@@ -92,15 +109,37 @@ color:white;
 text-align:center;
 padding:20px;
 }
+
+@media(max-width:768px){
+
+.hero{
+height:500px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.logo{
+width:170px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <section class="hero">
+
 <div class="overlay">
 
-<img src="logo.png" class="logo">
+<img src="logo.png" alt="Talorynex Logo" class="logo">
 
 <h1>TALORYNEX</h1>
 
@@ -110,14 +149,20 @@ International Recruiting & Workforce Solutions
 </p>
 
 </div>
+
 </section>
 
 <div class="container">
 
+<h2 class="section-title">
+International Recruitment Services
+</h2>
+
 <div class="card">
 <h2>🇩🇪 Für Arbeitgeber</h2>
 <p>
-Wir unterstützen Unternehmen bei der Rekrutierung qualifizierter Mitarbeiter und internationaler Fachkräfte. Von der Vorauswahl bis zur erfolgreichen Integration begleiten wir den gesamten Prozess.
+Wir unterstützen Unternehmen bei der Rekrutierung qualifizierter Mitarbeiter und internationaler Fachkräfte.
+Von der Kandidatensuche bis zur erfolgreichen Integration begleiten wir den gesamten Prozess.
 </p>
 </div>
 
@@ -131,7 +176,8 @@ Wir begleiten Kandidaten auf ihrem Weg nach Deutschland und unterstützen sie w�
 <div class="card">
 <h2>🇬🇧 For Employers</h2>
 <p>
-We help companies recruit qualified professionals and international talent. From candidate sourcing to successful onboarding, we support the entire recruitment process.
+We help companies recruit qualified professionals and international talent.
+From candidate sourcing to successful onboarding, we support the entire recruitment process.
 </p>
 </div>
 
@@ -148,14 +194,13 @@ We guide candidates on their journey to Germany and support them throughout the 
 
 <h2>Contact</h2>
 
-<p>
-Munich, Germany
-</p>
+<p>Munich, Germany</p>
 
 <br>
 
 <p>
-📧 <a href="mailto:info@talorynex-international-recruiting.de">
+📧
+<a href="mailto:info@talorynex-international-recruiting.de">
 info@talorynex-international-recruiting.de
 </a>
 </p>
