@@ -539,6 +539,171 @@
       font-size: 0.96rem;
     }
 
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .proof-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(8, 32, 68, 0.08);
+    }
+
+    .proof-card strong {
+      display: block;
+      color: var(--blue-800);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .proof-card span {
+      display: block;
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .journey-image {
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .journey-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .timeline-item strong {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-600));
+    }
+
+    .timeline-item p {
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .faq-item {
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .faq-item h3 {
+      color: var(--white);
+    }
+
+    .faq-item p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-field label {
+      color: var(--blue-950);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--ink);
+      background: #fbfdff;
+      font: inherit;
+    }
+
+    .form-field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: fit-content;
+      background: var(--blue-800);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .split {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
@@ -807,8 +972,16 @@
 
       .grid,
       .media-strip,
+      .proof-grid,
+      .journey,
+      .contact-layout,
       .process {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journey,
+      .contact-layout {
+        grid-template-columns: 1fr;
       }
 
       .contact-card {
@@ -879,6 +1052,9 @@
 
       .stats,
       .media-strip,
+      .proof-grid,
+      .faq-grid,
+      .form-row,
       .grid,
       .grid.two,
       .process {
@@ -977,7 +1153,7 @@
           </div>
         </div>
         <div class="video-card" aria-label="Animated Talorynex recruitment story">
-          <img class="promo-animation" src="talorynex-promo.gif" alt="Animated Talorynex recruitment promo video">
+          <img class="promo-animation" src="talorynex-promo.webp" alt="Animated Talorynex recruitment promo video">
           <div class="video-content">
             <h3 data-i18n="film.videoTitle">Global talent, guided with care.</h3>
             <p data-i18n="film.videoCopy">A premium visual story for international hiring, relocation support, and long-term workforce success.</p>
@@ -1013,6 +1189,34 @@
       </div>
     </section>
 
+    <section class="section section-soft" aria-label="Why Talorynex">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="section-kicker" data-i18n="why.kicker">Why Talorynex</p>
+          <h2 data-i18n="why.title">A specialist team with proven international recruitment experience.</h2>
+          <p class="lead" data-i18n="why.copy">For four years, Talorynex has supported employers and candidates through practical, complete recruitment processes across countries, sectors, and relocation needs.</p>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-card">
+            <strong data-i18n="why.statOneValue">4+</strong>
+            <span data-i18n="why.statOneLabel">Years of recruiting experience</span>
+          </div>
+          <div class="proof-card">
+            <strong data-i18n="why.statTwoValue">400+</strong>
+            <span data-i18n="why.statTwoLabel">Candidates successfully supported</span>
+          </div>
+          <div class="proof-card">
+            <strong data-i18n="why.statThreeValue">End-to-End</strong>
+            <span data-i18n="why.statThreeLabel">Complete recruiting process</span>
+          </div>
+          <div class="proof-card">
+            <strong data-i18n="why.statFourValue">Office Support</strong>
+            <span data-i18n="why.statFourLabel">Communication with the foreigners office</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-soft" aria-label="Talorynex visual expertise">
       <div class="container">
         <div class="section-heading center">
@@ -1042,6 +1246,51 @@
               <p data-i18n="focus.cardThreeCopy">Flexible, dependable support for building qualified teams across sectors and international talent markets.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Recruitment process">
+      <div class="container journey">
+        <div class="journey-image">
+          <img src="documentation-support.png" alt="Recruitment consultant supporting documentation and relocation process">
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-kicker" data-i18n="journey.kicker">Our Process</p>
+            <h2 data-i18n="journey.title">A clear process from recruitment to arrival.</h2>
+            <p class="lead" data-i18n="journey.copy">We support both sides with structure, communication, and practical guidance so international hiring becomes easier to manage.</p>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <strong>01</strong>
+              <div>
+                <h3 data-i18n="journey.stepOneTitle">Consultation</h3>
+                <p data-i18n="journey.stepOneCopy">We clarify hiring goals, candidate profile, timeline, and the support needed.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <strong>02</strong>
+              <div>
+                <h3 data-i18n="journey.stepTwoTitle">Talent Sourcing</h3>
+                <p data-i18n="journey.stepTwoCopy">We identify, screen, and prepare suitable international candidates.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <strong>03</strong>
+              <div>
+                <h3 data-i18n="journey.stepThreeTitle">Documentation & Authorities</h3>
+                <p data-i18n="journey.stepThreeCopy">We support communication and coordination with relevant offices, including the foreigners office where needed.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <strong>04</strong>
+              <div>
+                <h3 data-i18n="journey.stepFourTitle">Onboarding & Integration</h3>
+                <p data-i18n="journey.stepFourCopy">We help candidates and employers move from placement to a stable start in the workplace.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1138,18 +1387,82 @@
       </div>
     </section>
 
+    <section class="section section-dark" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="section-kicker" data-i18n="faq.kicker">FAQ</p>
+          <h2 data-i18n="faq.title">Questions employers and candidates often ask.</h2>
+          <p class="lead" data-i18n="faq.copy">A quick overview of how Talorynex supports international recruitment journeys.</p>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3 data-i18n="faq.oneQuestion">Do you support employers during the full recruitment process?</h3>
+            <p data-i18n="faq.oneAnswer">Yes. We support profile definition, sourcing, screening, candidate communication, documentation awareness, and onboarding preparation.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.twoQuestion">Can candidates receive relocation guidance?</h3>
+            <p data-i18n="faq.twoAnswer">Yes. We guide candidates with application preparation, relocation orientation, and integration steps for working in Germany.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.threeQuestion">Do you communicate with authorities?</h3>
+            <p data-i18n="faq.threeAnswer">Where required in the recruitment process, we help coordinate communication with relevant offices, including the foreigners office.</p>
+          </article>
+          <article class="faq-item">
+            <h3 data-i18n="faq.fourQuestion">How can we start?</h3>
+            <p data-i18n="faq.fourAnswer">Send us a short message with your hiring need or candidate profile, and we will respond with the next steps.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container">
-        <div class="contact-card">
-          <div>
+        <div class="contact-layout">
+          <div class="contact-card">
+            <div>
             <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
             <h2 data-i18n="contact.title">Let us discuss your recruitment goals.</h2>
             <ul class="contact-list">
               <li><span data-i18n="contact.emailLabel">Email:</span> <a href="mailto:info@talorynex-international-recruiting.de">info@talorynex-international-recruiting.de</a></li>
               <li data-i18n="contact.location">Location: Munich, Germany</li>
             </ul>
+              <div class="journey-image" style="margin-top: 24px;">
+                <img src="onboarding-integration.png" alt="International employee onboarding and workplace integration">
+              </div>
+            </div>
           </div>
-          <a class="btn btn-primary" href="mailto:info@talorynex-international-recruiting.de" data-i18n="contact.cta">Contact Talorynex</a>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-name" data-i18n="form.name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="form-field">
+                <label for="contact-email" data-i18n="form.email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-type" data-i18n="form.type">I am contacting as</label>
+                <select id="contact-type" name="type">
+                  <option data-i18n="form.typeEmployer">Employer</option>
+                  <option data-i18n="form.typeCandidate">Candidate</option>
+                  <option data-i18n="form.typeOther">Other</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="contact-subject" data-i18n="form.subject">Subject</label>
+                <input id="contact-subject" name="subject" type="text" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="contact-message" data-i18n="form.message">Message</label>
+              <textarea id="contact-message" name="message" required></textarea>
+            </div>
+            <button class="btn" type="submit" data-i18n="form.submit">Send Inquiry</button>
+            <p class="form-note" data-i18n="form.note">This form opens your email app with a prepared message. For direct delivery, we can connect a form service later.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -1195,6 +1508,17 @@
         "about.statTwoLabel": "Germany Base",
         "about.statThreeValue": "End-to-End",
         "about.statThreeLabel": "Recruiting Support",
+        "why.kicker": "Why Talorynex",
+        "why.title": "A specialist team with proven international recruitment experience.",
+        "why.copy": "For four years, Talorynex has supported employers and candidates through practical, complete recruitment processes across countries, sectors, and relocation needs.",
+        "why.statOneValue": "4+",
+        "why.statOneLabel": "Years of recruiting experience",
+        "why.statTwoValue": "400+",
+        "why.statTwoLabel": "Candidates successfully supported",
+        "why.statThreeValue": "End-to-End",
+        "why.statThreeLabel": "Complete recruiting process",
+        "why.statFourValue": "Office Support",
+        "why.statFourLabel": "Communication with the foreigners office",
         "focus.kicker": "Our Focus",
         "focus.title": "Recruitment that feels organized, personal, and global.",
         "focus.copy": "Every hiring journey needs trust, speed, and practical support. These visual pillars show how Talorynex works with employers and candidates across international recruitment stages.",
@@ -1204,6 +1528,17 @@
         "focus.cardTwoCopy": "Guidance for applications, interviews, relocation preparation, and the first steps into a new work environment.",
         "focus.cardThreeTitle": "Workforce Solutions",
         "focus.cardThreeCopy": "Flexible, dependable support for building qualified teams across sectors and international talent markets.",
+        "journey.kicker": "Our Process",
+        "journey.title": "A clear process from recruitment to arrival.",
+        "journey.copy": "We support both sides with structure, communication, and practical guidance so international hiring becomes easier to manage.",
+        "journey.stepOneTitle": "Consultation",
+        "journey.stepOneCopy": "We clarify hiring goals, candidate profile, timeline, and the support needed.",
+        "journey.stepTwoTitle": "Talent Sourcing",
+        "journey.stepTwoCopy": "We identify, screen, and prepare suitable international candidates.",
+        "journey.stepThreeTitle": "Documentation & Authorities",
+        "journey.stepThreeCopy": "We support communication and coordination with relevant offices, including the foreigners office where needed.",
+        "journey.stepFourTitle": "Onboarding & Integration",
+        "journey.stepFourCopy": "We help candidates and employers move from placement to a stable start in the workplace.",
         "employers.kicker": "Employers",
         "employers.title": "Reliable hiring support for growing organizations.",
         "employers.copy": "We help employers access skilled international candidates and manage a structured recruitment process from profile definition to onboarding preparation.",
@@ -1237,11 +1572,32 @@
         "services.cardThreeCopy": "Workforce support that helps companies plan, hire, and integrate talent with confidence.",
         "services.cardFourTitle": "Employer Consulting",
         "services.cardFourCopy": "Practical advice on international hiring workflows, candidate expectations, and recruitment positioning.",
+        "faq.kicker": "FAQ",
+        "faq.title": "Questions employers and candidates often ask.",
+        "faq.copy": "A quick overview of how Talorynex supports international recruitment journeys.",
+        "faq.oneQuestion": "Do you support employers during the full recruitment process?",
+        "faq.oneAnswer": "Yes. We support profile definition, sourcing, screening, candidate communication, documentation awareness, and onboarding preparation.",
+        "faq.twoQuestion": "Can candidates receive relocation guidance?",
+        "faq.twoAnswer": "Yes. We guide candidates with application preparation, relocation orientation, and integration steps for working in Germany.",
+        "faq.threeQuestion": "Do you communicate with authorities?",
+        "faq.threeAnswer": "Where required in the recruitment process, we help coordinate communication with relevant offices, including the foreigners office.",
+        "faq.fourQuestion": "How can we start?",
+        "faq.fourAnswer": "Send us a short message with your hiring need or candidate profile, and we will respond with the next steps.",
         "contact.kicker": "Contact",
         "contact.title": "Let us discuss your recruitment goals.",
         "contact.emailLabel": "Email:",
         "contact.location": "Location: Munich, Germany",
         "contact.cta": "Contact Talorynex",
+        "form.name": "Name",
+        "form.email": "Email",
+        "form.type": "I am contacting as",
+        "form.typeEmployer": "Employer",
+        "form.typeCandidate": "Candidate",
+        "form.typeOther": "Other",
+        "form.subject": "Subject",
+        "form.message": "Message",
+        "form.submit": "Send Inquiry",
+        "form.note": "This form opens your email app with a prepared message. For direct delivery, we can connect a form service later.",
         "footer.rights": "© 2026 Talorynex International Recruiting. All rights reserved."
       },
       bs: {
@@ -1275,6 +1631,17 @@
         "about.statTwoLabel": "Baza u Njemačkoj",
         "about.statThreeValue": "Kompletno",
         "about.statThreeLabel": "Podrška regrutaciji",
+        "why.kicker": "Zašto Talorynex",
+        "why.title": "Tim stručnjaka sa dokazanim iskustvom u međunarodnoj regrutaciji.",
+        "why.copy": "Već 4 godine Talorynex podržava poslodavce i kandidate kroz praktične i kompletne procese regrutacije iz različitih zemalja, sektora i potreba preseljenja.",
+        "why.statOneValue": "4+",
+        "why.statOneLabel": "Godine iskustva u regrutaciji",
+        "why.statTwoValue": "400+",
+        "why.statTwoLabel": "Uspješno podržanih kandidata",
+        "why.statThreeValue": "Kompletno",
+        "why.statThreeLabel": "Cjelokupan proces regrutacije",
+        "why.statFourValue": "Podrška uredima",
+        "why.statFourLabel": "Komunikacija sa uredom za strance",
         "focus.kicker": "Naš fokus",
         "focus.title": "Regrutacija koja je organizovana, lična i globalna.",
         "focus.copy": "Svaki proces zapošljavanja traži povjerenje, brzinu i praktičnu podršku. Ovi vizuelni segmenti pokazuju kako Talorynex radi sa poslodavcima i kandidatima kroz faze međunarodne regrutacije.",
@@ -1284,6 +1651,17 @@
         "focus.cardTwoCopy": "Podrška za prijave, intervjue, pripremu za preseljenje i prve korake u novom radnom okruženju.",
         "focus.cardThreeTitle": "Rješenja za radnu snagu",
         "focus.cardThreeCopy": "Fleksibilna i pouzdana podrška za izgradnju kvalifikovanih timova u različitim sektorima i međunarodnim tržištima rada.",
+        "journey.kicker": "Naš proces",
+        "journey.title": "Jasan proces od regrutacije do dolaska.",
+        "journey.copy": "Objema stranama pružamo strukturu, komunikaciju i praktične smjernice kako bi međunarodno zapošljavanje bilo lakše za upravljanje.",
+        "journey.stepOneTitle": "Konsultacija",
+        "journey.stepOneCopy": "Razjašnjavamo ciljeve zapošljavanja, profil kandidata, rokove i potrebnu podršku.",
+        "journey.stepTwoTitle": "Pronalazak talenata",
+        "journey.stepTwoCopy": "Identifikujemo, provjeravamo i pripremamo odgovarajuće međunarodne kandidate.",
+        "journey.stepThreeTitle": "Dokumentacija i institucije",
+        "journey.stepThreeCopy": "Podržavamo komunikaciju i koordinaciju sa relevantnim uredima, uključujući ured za strance kada je potrebno.",
+        "journey.stepFourTitle": "Onboarding i integracija",
+        "journey.stepFourCopy": "Pomažemo kandidatima i poslodavcima da od zapošljavanja dođu do stabilnog početka na radnom mjestu.",
         "employers.kicker": "Poslodavci",
         "employers.title": "Pouzdana podrška zapošljavanju za kompanije koje rastu.",
         "employers.copy": "Pomažemo poslodavcima da dođu do kvalifikovanih međunarodnih kandidata i vode strukturiran proces regrutacije od definisanja profila do pripreme za onboarding.",
@@ -1317,11 +1695,32 @@
         "services.cardThreeCopy": "Podrška radnoj snazi koja pomaže kompanijama da planiraju, zaposle i integrišu talente sa sigurnošću.",
         "services.cardFourTitle": "Konsalting za poslodavce",
         "services.cardFourCopy": "Praktični savjeti o međunarodnim procesima zapošljavanja, očekivanjima kandidata i pozicioniranju ponude.",
+        "faq.kicker": "FAQ",
+        "faq.title": "Pitanja koja poslodavci i kandidati često postavljaju.",
+        "faq.copy": "Kratak pregled kako Talorynex podržava međunarodne procese regrutacije.",
+        "faq.oneQuestion": "Da li podržavate poslodavce kroz cijeli proces regrutacije?",
+        "faq.oneAnswer": "Da. Podržavamo definisanje profila, sourcing, selekciju, komunikaciju sa kandidatima, pregled dokumentacije i pripremu za onboarding.",
+        "faq.twoQuestion": "Mogu li kandidati dobiti pomoć oko preseljenja?",
+        "faq.twoAnswer": "Da. Kandidate vodimo kroz pripremu prijave, orijentaciju za preseljenje i integracijske korake za rad u Njemačkoj.",
+        "faq.threeQuestion": "Da li komunicirate sa institucijama?",
+        "faq.threeAnswer": "Kada je potrebno u procesu regrutacije, pomažemo u koordinaciji komunikacije sa relevantnim uredima, uključujući ured za strance.",
+        "faq.fourQuestion": "Kako možemo početi?",
+        "faq.fourAnswer": "Pošaljite nam kratku poruku sa potrebom zapošljavanja ili profilom kandidata, a mi ćemo odgovoriti sa sljedećim koracima.",
         "contact.kicker": "Kontakt",
         "contact.title": "Razgovarajmo o vašim ciljevima zapošljavanja.",
         "contact.emailLabel": "Email:",
         "contact.location": "Lokacija: Minhen, Njemačka",
         "contact.cta": "Kontaktirajte Talorynex",
+        "form.name": "Ime i prezime",
+        "form.email": "Email",
+        "form.type": "Kontaktiram kao",
+        "form.typeEmployer": "Poslodavac",
+        "form.typeCandidate": "Kandidat",
+        "form.typeOther": "Drugo",
+        "form.subject": "Naslov",
+        "form.message": "Poruka",
+        "form.submit": "Pošalji upit",
+        "form.note": "Forma otvara vašu email aplikaciju sa pripremljenom porukom. Za direktno slanje možemo kasnije povezati form servis.",
         "footer.rights": "© 2026 Talorynex International Recruiting. Sva prava zadržana."
       },
       de: {
@@ -1355,6 +1754,17 @@
         "about.statTwoLabel": "Standort Deutschland",
         "about.statThreeValue": "Ganzheitlich",
         "about.statThreeLabel": "Recruiting-Support",
+        "why.kicker": "Warum Talorynex",
+        "why.title": "Ein Expertenteam mit nachgewiesener Erfahrung im internationalen Recruiting.",
+        "why.copy": "Seit 4 Jahren unterstützt Talorynex Arbeitgeber und Kandidaten durch praktische, vollständige Recruiting-Prozesse über Länder, Branchen und Relocation-Anforderungen hinweg.",
+        "why.statOneValue": "4+",
+        "why.statOneLabel": "Jahre Recruiting-Erfahrung",
+        "why.statTwoValue": "400+",
+        "why.statTwoLabel": "Erfolgreich unterstützte Kandidaten",
+        "why.statThreeValue": "Ganzheitlich",
+        "why.statThreeLabel": "Kompletter Recruiting-Prozess",
+        "why.statFourValue": "Behörden-Support",
+        "why.statFourLabel": "Kommunikation mit der Ausländerbehörde",
         "focus.kicker": "Unser Fokus",
         "focus.title": "Recruiting, das organisiert, persönlich und international wirkt.",
         "focus.copy": "Jeder Einstellungsprozess braucht Vertrauen, Tempo und praktische Unterstützung. Diese visuellen Schwerpunkte zeigen, wie Talorynex Arbeitgeber und Kandidaten in den Phasen internationaler Rekrutierung begleitet.",
@@ -1364,6 +1774,17 @@
         "focus.cardTwoCopy": "Begleitung bei Bewerbungen, Interviews, Relocation-Vorbereitung und den ersten Schritten in einer neuen Arbeitsumgebung.",
         "focus.cardThreeTitle": "Workforce Solutions",
         "focus.cardThreeCopy": "Flexible und verlässliche Unterstützung beim Aufbau qualifizierter Teams in verschiedenen Branchen und internationalen Talentmärkten.",
+        "journey.kicker": "Unser Prozess",
+        "journey.title": "Ein klarer Prozess von der Rekrutierung bis zur Ankunft.",
+        "journey.copy": "Wir unterstützen beide Seiten mit Struktur, Kommunikation und praktischer Orientierung, damit internationales Recruiting leichter steuerbar wird.",
+        "journey.stepOneTitle": "Beratung",
+        "journey.stepOneCopy": "Wir klären Einstellungsziele, Kandidatenprofil, Zeitplan und den benötigten Support.",
+        "journey.stepTwoTitle": "Talent Sourcing",
+        "journey.stepTwoCopy": "Wir identifizieren, prüfen und bereiten passende internationale Kandidaten vor.",
+        "journey.stepThreeTitle": "Dokumente & Behörden",
+        "journey.stepThreeCopy": "Wir unterstützen Kommunikation und Koordination mit relevanten Stellen, einschließlich der Ausländerbehörde, wenn erforderlich.",
+        "journey.stepFourTitle": "Onboarding & Integration",
+        "journey.stepFourCopy": "Wir helfen Kandidaten und Arbeitgebern, von der Vermittlung zu einem stabilen Start am Arbeitsplatz zu gelangen.",
         "employers.kicker": "Arbeitgeber",
         "employers.title": "Zuverlässige Recruiting-Unterstützung für wachsende Unternehmen.",
         "employers.copy": "Wir helfen Arbeitgebern, qualifizierte internationale Kandidaten zu erreichen und einen strukturierten Recruiting-Prozess von der Profildefinition bis zur Onboarding-Vorbereitung zu steuern.",
@@ -1397,11 +1818,32 @@
         "services.cardThreeCopy": "Workforce-Unterstützung, die Unternehmen hilft, Talente sicher zu planen, einzustellen und zu integrieren.",
         "services.cardFourTitle": "Arbeitgeberberatung",
         "services.cardFourCopy": "Praktische Beratung zu internationalen Einstellungsprozessen, Kandidatenerwartungen und Recruiting-Positionierung.",
+        "faq.kicker": "FAQ",
+        "faq.title": "Fragen, die Arbeitgeber und Kandidaten häufig stellen.",
+        "faq.copy": "Ein kurzer Überblick darüber, wie Talorynex internationale Recruiting-Prozesse unterstützt.",
+        "faq.oneQuestion": "Unterstützen Sie Arbeitgeber im gesamten Recruiting-Prozess?",
+        "faq.oneAnswer": "Ja. Wir unterstützen Profilerstellung, Sourcing, Screening, Kandidatenkommunikation, Dokumentenübersicht und Onboarding-Vorbereitung.",
+        "faq.twoQuestion": "Erhalten Kandidaten Relocation-Unterstützung?",
+        "faq.twoAnswer": "Ja. Wir begleiten Kandidaten bei Bewerbungsvorbereitung, Relocation-Orientierung und Integrationsschritten für die Arbeit in Deutschland.",
+        "faq.threeQuestion": "Kommunizieren Sie mit Behörden?",
+        "faq.threeAnswer": "Wenn es im Recruiting-Prozess erforderlich ist, unterstützen wir die Koordination mit relevanten Stellen, einschließlich der Ausländerbehörde.",
+        "faq.fourQuestion": "Wie können wir starten?",
+        "faq.fourAnswer": "Senden Sie uns eine kurze Nachricht mit Ihrem Einstellungsbedarf oder Kandidatenprofil, und wir melden uns mit den nächsten Schritten.",
         "contact.kicker": "Kontakt",
         "contact.title": "Lassen Sie uns über Ihre Recruiting-Ziele sprechen.",
         "contact.emailLabel": "E-Mail:",
         "contact.location": "Standort: München, Deutschland",
         "contact.cta": "Talorynex kontaktieren",
+        "form.name": "Name",
+        "form.email": "E-Mail",
+        "form.type": "Ich kontaktiere als",
+        "form.typeEmployer": "Arbeitgeber",
+        "form.typeCandidate": "Kandidat",
+        "form.typeOther": "Sonstiges",
+        "form.subject": "Betreff",
+        "form.message": "Nachricht",
+        "form.submit": "Anfrage senden",
+        "form.note": "Dieses Formular öffnet Ihre E-Mail-App mit einer vorbereiteten Nachricht. Für direkte Zustellung können wir später einen Formularservice anbinden.",
         "footer.rights": "© 2026 Talorynex International Recruiting. Alle Rechte vorbehalten."
       }
     };
@@ -1453,6 +1895,24 @@
         navToggle.setAttribute("aria-expanded", "false");
         navMenu.classList.remove("is-open");
       });
+    });
+
+    const contactForm = document.querySelector("#contact-form");
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(contactForm);
+      const subject = formData.get("subject") || "Talorynex inquiry";
+      const body = [
+        `Name: ${formData.get("name") || ""}`,
+        `Email: ${formData.get("email") || ""}`,
+        `Type: ${formData.get("type") || ""}`,
+        "",
+        "Message:",
+        formData.get("message") || ""
+      ].join("\n");
+
+      window.location.href = `mailto:info@talorynex-international-recruiting.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
   </script>
 </body>
