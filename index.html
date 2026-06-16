@@ -422,9 +422,7 @@
       min-height: 360px;
       overflow: hidden;
       color: var(--white);
-      background:
-        linear-gradient(135deg, rgba(7, 27, 54, 0.94), rgba(13, 79, 159, 0.56)),
-        url("banner.png") center / cover no-repeat;
+      background: var(--blue-950);
     }
 
     .video-card::before,
@@ -459,6 +457,18 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 30px;
+    }
+
+    .promo-animation {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-card .video-content {
+      background: linear-gradient(180deg, rgba(7, 27, 54, 0.08), rgba(7, 27, 54, 0.74));
     }
 
     .play-pulse {
@@ -973,8 +983,8 @@
           </div>
         </div>
         <div class="video-card" aria-label="Animated Talorynex recruitment story">
+          <img class="promo-animation" src="talorynex-promo.gif" alt="Animated Talorynex recruitment promo video">
           <div class="video-content">
-            <div class="play-pulse" aria-hidden="true"><span></span></div>
             <h3 data-i18n="film.videoTitle">Global talent, guided with care.</h3>
             <p data-i18n="film.videoCopy">A premium visual story for international hiring, relocation support, and long-term workforce success.</p>
           </div>
