@@ -20,7 +20,7 @@
     </nav>
   </header>
   <main>
-    <section class="page-hero"><div class="container"><p class="eyebrow">Contact</p><h1>Let us discuss your recruitment goals.</h1><p class="hero-copy">Send an inquiry as an employer, candidate or partner. The form opens your email app with a prepared message.</p></div></section>
+    <section class="page-hero"><div class="container"><p class="eyebrow">Contact</p><h1 data-i18n="contactHeroTitle">Let us discuss your recruitment goals.</h1><p class="hero-copy" data-i18n="contactHeroCopy">Send an inquiry as an employer, candidate or partner. The form opens your email app with a prepared message.</p></div></section>
     <section class="section">
       <div class="container contact-layout">
         <div class="contact-panel">
@@ -35,17 +35,17 @@
         </div>
         <form class="form-card" id="contact-form">
           <div class="form-grid">
-            <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="name" data-i18n="formName">Name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="email" data-i18n="formEmail">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
           </div>
           <div class="form-grid">
-            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="type">I am contacting as</label><select id="type" name="type"><option>Employer</option><option>Candidate</option><option>Other</option></select></div>
+            <div class="field"><label for="phone" data-i18n="formPhone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="type" data-i18n="formType">I am contacting as</label><select id="type" name="type"><option>Employer</option><option>Candidate</option><option>Other</option></select></div>
           </div>
-          <div class="field"><label for="subject">Subject</label><input id="subject" name="subject" type="text" required></div>
-          <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
-          <button class="btn btn-blue" type="submit">Send Inquiry</button>
-          <p class="form-note">This static GitHub Pages form opens your email app. Later, we can connect Formspree or another form service for direct inbox delivery.</p>
+          <div class="field"><label for="subject" data-i18n="formSubject">Subject</label><input id="subject" name="subject" type="text" required></div>
+          <div class="field"><label for="message" data-i18n="formMessage">Message</label><textarea id="message" name="message" required></textarea></div>
+          <button class="btn btn-blue" type="submit" data-i18n="formSubmit">Send Inquiry</button>
+          <p class="form-note" data-i18n="formNote">This static GitHub Pages form opens your email app. Later, we can connect Formspree or another form service for direct inbox delivery.</p>
         </form>
       </div>
     </section>
