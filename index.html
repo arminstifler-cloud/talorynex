@@ -148,6 +148,43 @@
       color: var(--white);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .language-switcher button {
+      min-width: 38px;
+      height: 32px;
+      border: 0;
+      border-radius: 6px;
+      color: rgba(255, 255, 255, 0.86);
+      background: transparent;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .language-switcher button:hover,
+    .language-switcher button:focus-visible,
+    .language-switcher button.is-active {
+      color: var(--blue-900);
+      background: var(--white);
+    }
+
     .hero {
       position: relative;
       min-height: 92vh;
@@ -783,6 +820,14 @@
         display: inline-block;
       }
 
+      .nav-actions {
+        gap: 8px;
+      }
+
+      .language-switcher button {
+        min-width: 34px;
+      }
+
       .nav-menu {
         position: absolute;
         top: 66px;
@@ -859,6 +904,15 @@
       .brand span {
         max-width: 180px;
       }
+
+      .language-switcher {
+        padding: 3px;
+      }
+
+      .language-switcher button {
+        min-width: 30px;
+        font-size: 0.72rem;
+      }
     }
   </style>
 </head>
@@ -869,17 +923,24 @@
         <img src="logo.png" alt="Talorynex logo">
         <span>Talorynex International Recruiting</span>
       </a>
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-menu" aria-expanded="false">
-        <span></span>
-      </button>
       <ul class="nav-menu" id="primary-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#employers">Employers</a></li>
-        <li><a href="#candidates">Candidates</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+        <li><a href="#employers" data-i18n="nav.employers">Employers</a></li>
+        <li><a href="#candidates" data-i18n="nav.candidates">Candidates</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <div class="language-switcher" aria-label="Language selection">
+          <button type="button" class="is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="bs" aria-pressed="false">BS</button>
+          <button type="button" data-lang="de" aria-pressed="false">DE</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primary-menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -888,13 +949,13 @@
       <div class="hero-inner">
         <div class="hero-content">
           <img class="hero-logo" src="logo.png" alt="Talorynex logo">
-          <p class="eyebrow">International Recruitment & Workforce Solutions</p>
+          <p class="eyebrow" data-i18n="hero.eyebrow">International Recruitment & Workforce Solutions</p>
           <h1>TALORYNEX</h1>
-          <p class="hero-subtitle">Connecting Talent. Building Futures.</p>
-          <p class="hero-copy">We help employers in Germany and Europe connect with qualified international professionals through structured recruiting, relocation-aware candidate support, and dependable workforce solutions.</p>
+          <p class="hero-subtitle" data-i18n="hero.subtitle">Connecting Talent. Building Futures.</p>
+          <p class="hero-copy" data-i18n="hero.copy">We help employers in Germany and Europe connect with qualified international professionals through structured recruiting, relocation-aware candidate support, and dependable workforce solutions.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a Conversation</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
+            <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaPrimary">Start a Conversation</a>
+            <a class="btn btn-secondary" href="#services" data-i18n="hero.ctaSecondary">Explore Services</a>
           </div>
         </div>
       </div>
@@ -903,19 +964,19 @@
     <section class="brand-film" aria-label="Talorynex brand video">
       <div class="film-shell">
         <div class="film-copy">
-          <p class="section-kicker">Modern Recruiting Experience</p>
-          <h2>From first contact to successful integration.</h2>
-          <p class="lead">Talorynex brings employers and international professionals together through a structured, human, and future-focused recruitment process. The journey is clear: understand the need, find the right people, support the move, and help talent become part of the team.</p>
+          <p class="section-kicker" data-i18n="film.kicker">Modern Recruiting Experience</p>
+          <h2 data-i18n="film.title">From first contact to successful integration.</h2>
+          <p class="lead" data-i18n="film.copy">Talorynex brings employers and international professionals together through a structured, human, and future-focused recruitment process. The journey is clear: understand the need, find the right people, support the move, and help talent become part of the team.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#employers">For Employers</a>
-            <a class="btn btn-secondary" href="#candidates">For Candidates</a>
+            <a class="btn btn-primary" href="#employers" data-i18n="film.employers">For Employers</a>
+            <a class="btn btn-secondary" href="#candidates" data-i18n="film.candidates">For Candidates</a>
           </div>
         </div>
         <div class="video-card" aria-label="Animated Talorynex recruitment story">
           <div class="video-content">
             <div class="play-pulse" aria-hidden="true"><span></span></div>
-            <h3>Global talent, guided with care.</h3>
-            <p>A premium visual story for international hiring, relocation support, and long-term workforce success.</p>
+            <h3 data-i18n="film.videoTitle">Global talent, guided with care.</h3>
+            <p data-i18n="film.videoCopy">A premium visual story for international hiring, relocation support, and long-term workforce success.</p>
           </div>
         </div>
       </div>
@@ -924,24 +985,24 @@
     <section class="section" id="about">
       <div class="container split">
         <div class="section-heading">
-          <p class="section-kicker">About Us</p>
-          <h2>Professional recruitment built for international teams.</h2>
-          <p class="lead">Talorynex International Recruiting is a Munich-based recruitment partner focused on connecting companies with motivated, qualified professionals across borders. We support employers with targeted talent acquisition and guide candidates through a clear, respectful application journey.</p>
+          <p class="section-kicker" data-i18n="about.kicker">About Us</p>
+          <h2 data-i18n="about.title">Professional recruitment built for international teams.</h2>
+          <p class="lead" data-i18n="about.copy">Talorynex International Recruiting is a Munich-based recruitment partner focused on connecting companies with motivated, qualified professionals across borders. We support employers with targeted talent acquisition and guide candidates through a clear, respectful application journey.</p>
         </div>
         <div class="about-panel">
-          <p>Our work combines market understanding, candidate care, and practical workforce support. From initial sourcing to onboarding readiness, Talorynex helps both sides move with confidence, clarity, and a long-term view.</p>
+          <p data-i18n="about.panel">Our work combines market understanding, candidate care, and practical workforce support. From initial sourcing to onboarding readiness, Talorynex helps both sides move with confidence, clarity, and a long-term view.</p>
           <div class="stats" aria-label="Company focus areas">
             <div class="stat">
-              <strong>Global</strong>
-              <span>Talent Reach</span>
+              <strong data-i18n="about.statOneValue">Global</strong>
+              <span data-i18n="about.statOneLabel">Talent Reach</span>
             </div>
             <div class="stat">
-              <strong>Munich</strong>
-              <span>Germany Base</span>
+              <strong data-i18n="about.statTwoValue">Munich</strong>
+              <span data-i18n="about.statTwoLabel">Germany Base</span>
             </div>
             <div class="stat">
-              <strong>End-to-End</strong>
-              <span>Recruiting Support</span>
+              <strong data-i18n="about.statThreeValue">End-to-End</strong>
+              <span data-i18n="about.statThreeLabel">Recruiting Support</span>
             </div>
           </div>
         </div>
@@ -951,30 +1012,30 @@
     <section class="section section-soft" aria-label="Talorynex visual expertise">
       <div class="container">
         <div class="section-heading center">
-          <p class="section-kicker">Our Focus</p>
-          <h2>Recruitment that feels organized, personal, and global.</h2>
-          <p class="lead">Every hiring journey needs trust, speed, and practical support. These visual pillars show how Talorynex works with employers and candidates across international recruitment stages.</p>
+          <p class="section-kicker" data-i18n="focus.kicker">Our Focus</p>
+          <h2 data-i18n="focus.title">Recruitment that feels organized, personal, and global.</h2>
+          <p class="lead" data-i18n="focus.copy">Every hiring journey needs trust, speed, and practical support. These visual pillars show how Talorynex works with employers and candidates across international recruitment stages.</p>
         </div>
         <div class="media-strip">
           <article class="media-card">
             <img src="recruitment-team.png" alt="Recruitment consultant meeting international business professionals">
             <div>
-              <h3>Employer Partnerships</h3>
-              <p>Close collaboration with companies to understand hiring needs, role requirements, and the right candidate profile.</p>
+              <h3 data-i18n="focus.cardOneTitle">Employer Partnerships</h3>
+              <p data-i18n="focus.cardOneCopy">Close collaboration with companies to understand hiring needs, role requirements, and the right candidate profile.</p>
             </div>
           </article>
           <article class="media-card">
             <img src="candidate-support.png" alt="International candidate receiving relocation and application support">
             <div>
-              <h3>Candidate Support</h3>
-              <p>Guidance for applications, interviews, relocation preparation, and the first steps into a new work environment.</p>
+              <h3 data-i18n="focus.cardTwoTitle">Candidate Support</h3>
+              <p data-i18n="focus.cardTwoCopy">Guidance for applications, interviews, relocation preparation, and the first steps into a new work environment.</p>
             </div>
           </article>
           <article class="media-card">
             <img src="workforce-solutions.png" alt="Diverse workforce team representing international recruitment solutions">
             <div>
-              <h3>Workforce Solutions</h3>
-              <p>Flexible, dependable support for building qualified teams across sectors and international talent markets.</p>
+              <h3 data-i18n="focus.cardThreeTitle">Workforce Solutions</h3>
+              <p data-i18n="focus.cardThreeCopy">Flexible, dependable support for building qualified teams across sectors and international talent markets.</p>
             </div>
           </article>
         </div>
@@ -984,30 +1045,30 @@
     <section class="section section-soft" id="employers">
       <div class="container">
         <div class="section-heading center">
-          <p class="section-kicker">Employers</p>
-          <h2>Reliable hiring support for growing organizations.</h2>
-          <p class="lead">We help employers access skilled international candidates and manage a structured recruitment process from profile definition to onboarding preparation.</p>
+          <p class="section-kicker" data-i18n="employers.kicker">Employers</p>
+          <h2 data-i18n="employers.title">Reliable hiring support for growing organizations.</h2>
+          <p class="lead" data-i18n="employers.copy">We help employers access skilled international candidates and manage a structured recruitment process from profile definition to onboarding preparation.</p>
         </div>
         <div class="grid two">
           <article class="card">
             <div class="card-mark">01</div>
-            <h3>Recruitment Solutions</h3>
-            <p>Focused search and selection for roles where qualified, motivated talent is essential to business continuity and growth.</p>
+            <h3 data-i18n="employers.cardOneTitle">Recruitment Solutions</h3>
+            <p data-i18n="employers.cardOneCopy">Focused search and selection for roles where qualified, motivated talent is essential to business continuity and growth.</p>
           </article>
           <article class="card">
             <div class="card-mark">02</div>
-            <h3>Talent Acquisition</h3>
-            <p>Candidate outreach, screening, shortlisting, and communication designed to keep hiring pipelines clear and professional.</p>
+            <h3 data-i18n="employers.cardTwoTitle">Talent Acquisition</h3>
+            <p data-i18n="employers.cardTwoCopy">Candidate outreach, screening, shortlisting, and communication designed to keep hiring pipelines clear and professional.</p>
           </article>
           <article class="card">
             <div class="card-mark">03</div>
-            <h3>Workforce Support</h3>
-            <p>Practical coordination around hiring needs, candidate readiness, documentation awareness, and successful integration.</p>
+            <h3 data-i18n="employers.cardThreeTitle">Workforce Support</h3>
+            <p data-i18n="employers.cardThreeCopy">Practical coordination around hiring needs, candidate readiness, documentation awareness, and successful integration.</p>
           </article>
           <article class="card">
             <div class="card-mark">04</div>
-            <h3>International Hiring</h3>
-            <p>Cross-border recruitment support for employers building diverse, dependable teams in Germany and across Europe.</p>
+            <h3 data-i18n="employers.cardFourTitle">International Hiring</h3>
+            <p data-i18n="employers.cardFourCopy">Cross-border recruitment support for employers building diverse, dependable teams in Germany and across Europe.</p>
           </article>
         </div>
       </div>
@@ -1016,30 +1077,30 @@
     <section class="section" id="candidates">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Candidates</p>
-          <h2>Guidance for professionals ready for the next step.</h2>
-          <p class="lead">Talorynex supports international candidates with a clear pathway toward suitable opportunities, stronger applications, and smoother transitions into new working environments.</p>
+          <p class="section-kicker" data-i18n="candidates.kicker">Candidates</p>
+          <h2 data-i18n="candidates.title">Guidance for professionals ready for the next step.</h2>
+          <p class="lead" data-i18n="candidates.copy">Talorynex supports international candidates with a clear pathway toward suitable opportunities, stronger applications, and smoother transitions into new working environments.</p>
         </div>
         <div class="grid">
           <article class="card">
             <div class="card-mark">A</div>
-            <h3>Career Opportunities</h3>
-            <p>Access to relevant openings with employers seeking qualified international professionals.</p>
+            <h3 data-i18n="candidates.cardOneTitle">Career Opportunities</h3>
+            <p data-i18n="candidates.cardOneCopy">Access to relevant openings with employers seeking qualified international professionals.</p>
           </article>
           <article class="card">
             <div class="card-mark">B</div>
-            <h3>Relocation Assistance</h3>
-            <p>Helpful orientation for candidates preparing to move and work in Germany.</p>
+            <h3 data-i18n="candidates.cardTwoTitle">Relocation Assistance</h3>
+            <p data-i18n="candidates.cardTwoCopy">Helpful orientation for candidates preparing to move and work in Germany.</p>
           </article>
           <article class="card">
             <div class="card-mark">C</div>
-            <h3>Application Support</h3>
-            <p>Support with candidate profiles, documentation readiness, and interview preparation.</p>
+            <h3 data-i18n="candidates.cardThreeTitle">Application Support</h3>
+            <p data-i18n="candidates.cardThreeCopy">Support with candidate profiles, documentation readiness, and interview preparation.</p>
           </article>
           <article class="card">
             <div class="card-mark">D</div>
-            <h3>Integration Guidance</h3>
-            <p>Practical guidance for adapting to workplace expectations and settling into a new professional context.</p>
+            <h3 data-i18n="candidates.cardFourTitle">Integration Guidance</h3>
+            <p data-i18n="candidates.cardFourCopy">Practical guidance for adapting to workplace expectations and settling into a new professional context.</p>
           </article>
         </div>
       </div>
@@ -1048,26 +1109,26 @@
     <section class="section section-dark" id="services">
       <div class="container">
         <div class="section-heading center">
-          <p class="section-kicker">Services</p>
-          <h2>Structured services for employers and candidates.</h2>
-          <p class="lead">Our service model is designed to make international recruiting more predictable, transparent, and human from the first conversation onward.</p>
+          <p class="section-kicker" data-i18n="services.kicker">Services</p>
+          <h2 data-i18n="services.title">Structured services for employers and candidates.</h2>
+          <p class="lead" data-i18n="services.copy">Our service model is designed to make international recruiting more predictable, transparent, and human from the first conversation onward.</p>
         </div>
         <div class="process">
           <article class="process-item">
-            <h3>International Recruitment</h3>
-            <p>End-to-end recruiting support for companies seeking qualified professionals beyond local markets.</p>
+            <h3 data-i18n="services.cardOneTitle">International Recruitment</h3>
+            <p data-i18n="services.cardOneCopy">End-to-end recruiting support for companies seeking qualified professionals beyond local markets.</p>
           </article>
           <article class="process-item">
-            <h3>Talent Sourcing</h3>
-            <p>Targeted sourcing strategies that identify motivated candidates aligned with role and employer requirements.</p>
+            <h3 data-i18n="services.cardTwoTitle">Talent Sourcing</h3>
+            <p data-i18n="services.cardTwoCopy">Targeted sourcing strategies that identify motivated candidates aligned with role and employer requirements.</p>
           </article>
           <article class="process-item">
-            <h3>Workforce Solutions</h3>
-            <p>Workforce support that helps companies plan, hire, and integrate talent with confidence.</p>
+            <h3 data-i18n="services.cardThreeTitle">Workforce Solutions</h3>
+            <p data-i18n="services.cardThreeCopy">Workforce support that helps companies plan, hire, and integrate talent with confidence.</p>
           </article>
           <article class="process-item">
-            <h3>Employer Consulting</h3>
-            <p>Practical advice on international hiring workflows, candidate expectations, and recruitment positioning.</p>
+            <h3 data-i18n="services.cardFourTitle">Employer Consulting</h3>
+            <p data-i18n="services.cardFourCopy">Practical advice on international hiring workflows, candidate expectations, and recruitment positioning.</p>
           </article>
         </div>
       </div>
@@ -1077,14 +1138,14 @@
       <div class="container">
         <div class="contact-card">
           <div>
-            <p class="section-kicker">Contact</p>
-            <h2>Let us discuss your recruitment goals.</h2>
+            <p class="section-kicker" data-i18n="contact.kicker">Contact</p>
+            <h2 data-i18n="contact.title">Let us discuss your recruitment goals.</h2>
             <ul class="contact-list">
-              <li>Email: <a href="mailto:info@talorynex-international-recruiting.de">info@talorynex-international-recruiting.de</a></li>
-              <li>Location: Munich, Germany</li>
+              <li><span data-i18n="contact.emailLabel">Email:</span> <a href="mailto:info@talorynex-international-recruiting.de">info@talorynex-international-recruiting.de</a></li>
+              <li data-i18n="contact.location">Location: Munich, Germany</li>
             </ul>
           </div>
-          <a class="btn btn-primary" href="mailto:info@talorynex-international-recruiting.de">Contact Talorynex</a>
+          <a class="btn btn-primary" href="mailto:info@talorynex-international-recruiting.de" data-i18n="contact.cta">Contact Talorynex</a>
         </div>
       </div>
     </section>
@@ -1093,11 +1154,287 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <p><span class="footer-brand">Talorynex International Recruiting</span></p>
-      <p>&copy; 2026 Talorynex International Recruiting. All rights reserved.</p>
+      <p data-i18n="footer.rights">&copy; 2026 Talorynex International Recruiting. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        metaTitle: "Talorynex International Recruiting | Global Talent & Workforce Solutions",
+        metaDescription: "Talorynex International Recruiting connects employers with qualified international talent through recruitment, talent sourcing, workforce solutions, and candidate support from Munich, Germany.",
+        "nav.home": "Home",
+        "nav.about": "About Us",
+        "nav.employers": "Employers",
+        "nav.candidates": "Candidates",
+        "nav.services": "Services",
+        "nav.contact": "Contact",
+        "hero.eyebrow": "International Recruitment & Workforce Solutions",
+        "hero.subtitle": "Connecting Talent. Building Futures.",
+        "hero.copy": "We help employers in Germany and Europe connect with qualified international professionals through structured recruiting, relocation-aware candidate support, and dependable workforce solutions.",
+        "hero.ctaPrimary": "Start a Conversation",
+        "hero.ctaSecondary": "Explore Services",
+        "film.kicker": "Modern Recruiting Experience",
+        "film.title": "From first contact to successful integration.",
+        "film.copy": "Talorynex brings employers and international professionals together through a structured, human, and future-focused recruitment process. The journey is clear: understand the need, find the right people, support the move, and help talent become part of the team.",
+        "film.employers": "For Employers",
+        "film.candidates": "For Candidates",
+        "film.videoTitle": "Global talent, guided with care.",
+        "film.videoCopy": "A premium visual story for international hiring, relocation support, and long-term workforce success.",
+        "about.kicker": "About Us",
+        "about.title": "Professional recruitment built for international teams.",
+        "about.copy": "Talorynex International Recruiting is a Munich-based recruitment partner focused on connecting companies with motivated, qualified professionals across borders. We support employers with targeted talent acquisition and guide candidates through a clear, respectful application journey.",
+        "about.panel": "Our work combines market understanding, candidate care, and practical workforce support. From initial sourcing to onboarding readiness, Talorynex helps both sides move with confidence, clarity, and a long-term view.",
+        "about.statOneValue": "Global",
+        "about.statOneLabel": "Talent Reach",
+        "about.statTwoValue": "Munich",
+        "about.statTwoLabel": "Germany Base",
+        "about.statThreeValue": "End-to-End",
+        "about.statThreeLabel": "Recruiting Support",
+        "focus.kicker": "Our Focus",
+        "focus.title": "Recruitment that feels organized, personal, and global.",
+        "focus.copy": "Every hiring journey needs trust, speed, and practical support. These visual pillars show how Talorynex works with employers and candidates across international recruitment stages.",
+        "focus.cardOneTitle": "Employer Partnerships",
+        "focus.cardOneCopy": "Close collaboration with companies to understand hiring needs, role requirements, and the right candidate profile.",
+        "focus.cardTwoTitle": "Candidate Support",
+        "focus.cardTwoCopy": "Guidance for applications, interviews, relocation preparation, and the first steps into a new work environment.",
+        "focus.cardThreeTitle": "Workforce Solutions",
+        "focus.cardThreeCopy": "Flexible, dependable support for building qualified teams across sectors and international talent markets.",
+        "employers.kicker": "Employers",
+        "employers.title": "Reliable hiring support for growing organizations.",
+        "employers.copy": "We help employers access skilled international candidates and manage a structured recruitment process from profile definition to onboarding preparation.",
+        "employers.cardOneTitle": "Recruitment Solutions",
+        "employers.cardOneCopy": "Focused search and selection for roles where qualified, motivated talent is essential to business continuity and growth.",
+        "employers.cardTwoTitle": "Talent Acquisition",
+        "employers.cardTwoCopy": "Candidate outreach, screening, shortlisting, and communication designed to keep hiring pipelines clear and professional.",
+        "employers.cardThreeTitle": "Workforce Support",
+        "employers.cardThreeCopy": "Practical coordination around hiring needs, candidate readiness, documentation awareness, and successful integration.",
+        "employers.cardFourTitle": "International Hiring",
+        "employers.cardFourCopy": "Cross-border recruitment support for employers building diverse, dependable teams in Germany and across Europe.",
+        "candidates.kicker": "Candidates",
+        "candidates.title": "Guidance for professionals ready for the next step.",
+        "candidates.copy": "Talorynex supports international candidates with a clear pathway toward suitable opportunities, stronger applications, and smoother transitions into new working environments.",
+        "candidates.cardOneTitle": "Career Opportunities",
+        "candidates.cardOneCopy": "Access to relevant openings with employers seeking qualified international professionals.",
+        "candidates.cardTwoTitle": "Relocation Assistance",
+        "candidates.cardTwoCopy": "Helpful orientation for candidates preparing to move and work in Germany.",
+        "candidates.cardThreeTitle": "Application Support",
+        "candidates.cardThreeCopy": "Support with candidate profiles, documentation readiness, and interview preparation.",
+        "candidates.cardFourTitle": "Integration Guidance",
+        "candidates.cardFourCopy": "Practical guidance for adapting to workplace expectations and settling into a new professional context.",
+        "services.kicker": "Services",
+        "services.title": "Structured services for employers and candidates.",
+        "services.copy": "Our service model is designed to make international recruiting more predictable, transparent, and human from the first conversation onward.",
+        "services.cardOneTitle": "International Recruitment",
+        "services.cardOneCopy": "End-to-end recruiting support for companies seeking qualified professionals beyond local markets.",
+        "services.cardTwoTitle": "Talent Sourcing",
+        "services.cardTwoCopy": "Targeted sourcing strategies that identify motivated candidates aligned with role and employer requirements.",
+        "services.cardThreeTitle": "Workforce Solutions",
+        "services.cardThreeCopy": "Workforce support that helps companies plan, hire, and integrate talent with confidence.",
+        "services.cardFourTitle": "Employer Consulting",
+        "services.cardFourCopy": "Practical advice on international hiring workflows, candidate expectations, and recruitment positioning.",
+        "contact.kicker": "Contact",
+        "contact.title": "Let us discuss your recruitment goals.",
+        "contact.emailLabel": "Email:",
+        "contact.location": "Location: Munich, Germany",
+        "contact.cta": "Contact Talorynex",
+        "footer.rights": "© 2026 Talorynex International Recruiting. All rights reserved."
+      },
+      bs: {
+        metaTitle: "Talorynex International Recruiting | Međunarodno zapošljavanje i radna snaga",
+        metaDescription: "Talorynex International Recruiting povezuje poslodavce sa kvalifikovanim međunarodnim kandidatima kroz regrutaciju, pronalazak talenata, podršku radnoj snazi i podršku kandidatima iz Minhena.",
+        "nav.home": "Početna",
+        "nav.about": "O nama",
+        "nav.employers": "Poslodavci",
+        "nav.candidates": "Kandidati",
+        "nav.services": "Usluge",
+        "nav.contact": "Kontakt",
+        "hero.eyebrow": "Međunarodno zapošljavanje i rješenja za radnu snagu",
+        "hero.subtitle": "Povezujemo talente. Gradimo budućnost.",
+        "hero.copy": "Pomažemo poslodavcima u Njemačkoj i Evropi da se povežu sa kvalifikovanim međunarodnim stručnjacima kroz strukturiranu regrutaciju, podršku pri preseljenju i pouzdana rješenja za radnu snagu.",
+        "hero.ctaPrimary": "Započnite razgovor",
+        "hero.ctaSecondary": "Pogledajte usluge",
+        "film.kicker": "Moderno iskustvo regrutacije",
+        "film.title": "Od prvog kontakta do uspješne integracije.",
+        "film.copy": "Talorynex povezuje poslodavce i međunarodne stručnjake kroz strukturiran, ljudski i budućnosti okrenut proces regrutacije. Put je jasan: razumjeti potrebu, pronaći prave ljude, podržati preseljenje i pomoći talentima da postanu dio tima.",
+        "film.employers": "Za poslodavce",
+        "film.candidates": "Za kandidate",
+        "film.videoTitle": "Globalni talenti, vođeni s pažnjom.",
+        "film.videoCopy": "Premium vizuelna priča o međunarodnom zapošljavanju, podršci pri preseljenju i dugoročnom uspjehu radne snage.",
+        "about.kicker": "O nama",
+        "about.title": "Profesionalna regrutacija za međunarodne timove.",
+        "about.copy": "Talorynex International Recruiting je partner za regrutaciju iz Minhena, fokusiran na povezivanje kompanija sa motivisanim i kvalifikovanim stručnjacima iz različitih zemalja. Poslodavcima pomažemo u ciljanoj potrazi za talentima, a kandidatima pružamo jasan i profesionalan put kroz proces prijave.",
+        "about.panel": "Naš rad spaja razumijevanje tržišta, brigu o kandidatima i praktičnu podršku radnoj snazi. Od početnog pronalaska kandidata do pripreme za onboarding, Talorynex pomaže objema stranama da napreduju sa sigurnošću, jasnoćom i dugoročnim ciljem.",
+        "about.statOneValue": "Globalno",
+        "about.statOneLabel": "Domet talenata",
+        "about.statTwoValue": "Minhen",
+        "about.statTwoLabel": "Baza u Njemačkoj",
+        "about.statThreeValue": "Kompletno",
+        "about.statThreeLabel": "Podrška regrutaciji",
+        "focus.kicker": "Naš fokus",
+        "focus.title": "Regrutacija koja je organizovana, lična i globalna.",
+        "focus.copy": "Svaki proces zapošljavanja traži povjerenje, brzinu i praktičnu podršku. Ovi vizuelni segmenti pokazuju kako Talorynex radi sa poslodavcima i kandidatima kroz faze međunarodne regrutacije.",
+        "focus.cardOneTitle": "Partnerstvo s poslodavcima",
+        "focus.cardOneCopy": "Bliska saradnja s kompanijama kako bismo razumjeli potrebe zapošljavanja, zahtjeve pozicije i pravi profil kandidata.",
+        "focus.cardTwoTitle": "Podrška kandidatima",
+        "focus.cardTwoCopy": "Podrška za prijave, intervjue, pripremu za preseljenje i prve korake u novom radnom okruženju.",
+        "focus.cardThreeTitle": "Rješenja za radnu snagu",
+        "focus.cardThreeCopy": "Fleksibilna i pouzdana podrška za izgradnju kvalifikovanih timova u različitim sektorima i međunarodnim tržištima rada.",
+        "employers.kicker": "Poslodavci",
+        "employers.title": "Pouzdana podrška zapošljavanju za kompanije koje rastu.",
+        "employers.copy": "Pomažemo poslodavcima da dođu do kvalifikovanih međunarodnih kandidata i vode strukturiran proces regrutacije od definisanja profila do pripreme za onboarding.",
+        "employers.cardOneTitle": "Rješenja za regrutaciju",
+        "employers.cardOneCopy": "Ciljana potraga i selekcija za pozicije gdje su kvalifikovani i motivisani kandidati ključni za kontinuitet i rast poslovanja.",
+        "employers.cardTwoTitle": "Pronalazak talenata",
+        "employers.cardTwoCopy": "Kontaktiranje kandidata, provjera, uži izbor i komunikacija koja proces zapošljavanja održava jasnim i profesionalnim.",
+        "employers.cardThreeTitle": "Podrška radnoj snazi",
+        "employers.cardThreeCopy": "Praktična koordinacija oko potreba zapošljavanja, spremnosti kandidata, dokumentacije i uspješne integracije.",
+        "employers.cardFourTitle": "Međunarodno zapošljavanje",
+        "employers.cardFourCopy": "Podrška prekograničnoj regrutaciji za poslodavce koji grade raznolike i pouzdane timove u Njemačkoj i Evropi.",
+        "candidates.kicker": "Kandidati",
+        "candidates.title": "Podrška stručnjacima spremnim za sljedeći korak.",
+        "candidates.copy": "Talorynex podržava međunarodne kandidate kroz jasan put prema odgovarajućim prilikama, jačim prijavama i lakšem prelasku u novo radno okruženje.",
+        "candidates.cardOneTitle": "Karijerne prilike",
+        "candidates.cardOneCopy": "Pristup relevantnim pozicijama kod poslodavaca koji traže kvalifikovane međunarodne stručnjake.",
+        "candidates.cardTwoTitle": "Pomoć pri preseljenju",
+        "candidates.cardTwoCopy": "Korisna orijentacija za kandidate koji se pripremaju za preseljenje i rad u Njemačkoj.",
+        "candidates.cardThreeTitle": "Podrška pri prijavi",
+        "candidates.cardThreeCopy": "Podrška sa profilom kandidata, spremnošću dokumentacije i pripremom za intervju.",
+        "candidates.cardFourTitle": "Integracijsko savjetovanje",
+        "candidates.cardFourCopy": "Praktične smjernice za prilagođavanje očekivanjima radnog mjesta i novom profesionalnom okruženju.",
+        "services.kicker": "Usluge",
+        "services.title": "Strukturirane usluge za poslodavce i kandidate.",
+        "services.copy": "Naš model usluga osmišljen je da međunarodnu regrutaciju učini predvidljivijom, transparentnijom i ljudskijom od prvog razgovora.",
+        "services.cardOneTitle": "Međunarodna regrutacija",
+        "services.cardOneCopy": "Kompletna podrška regrutaciji za kompanije koje traže kvalifikovane stručnjake izvan lokalnog tržišta.",
+        "services.cardTwoTitle": "Sourcing talenata",
+        "services.cardTwoCopy": "Ciljane strategije pronalaska kandidata koji odgovaraju zahtjevima pozicije i poslodavca.",
+        "services.cardThreeTitle": "Rješenja za radnu snagu",
+        "services.cardThreeCopy": "Podrška radnoj snazi koja pomaže kompanijama da planiraju, zaposle i integrišu talente sa sigurnošću.",
+        "services.cardFourTitle": "Konsalting za poslodavce",
+        "services.cardFourCopy": "Praktični savjeti o međunarodnim procesima zapošljavanja, očekivanjima kandidata i pozicioniranju ponude.",
+        "contact.kicker": "Kontakt",
+        "contact.title": "Razgovarajmo o vašim ciljevima zapošljavanja.",
+        "contact.emailLabel": "Email:",
+        "contact.location": "Lokacija: Minhen, Njemačka",
+        "contact.cta": "Kontaktirajte Talorynex",
+        "footer.rights": "© 2026 Talorynex International Recruiting. Sva prava zadržana."
+      },
+      de: {
+        metaTitle: "Talorynex International Recruiting | Internationale Personalvermittlung",
+        metaDescription: "Talorynex International Recruiting verbindet Arbeitgeber mit qualifizierten internationalen Fachkräften durch Recruiting, Talent Sourcing, Workforce Solutions und Kandidatenbetreuung aus München.",
+        "nav.home": "Start",
+        "nav.about": "Über uns",
+        "nav.employers": "Arbeitgeber",
+        "nav.candidates": "Kandidaten",
+        "nav.services": "Leistungen",
+        "nav.contact": "Kontakt",
+        "hero.eyebrow": "Internationale Personalvermittlung & Workforce Solutions",
+        "hero.subtitle": "Talente verbinden. Zukunft gestalten.",
+        "hero.copy": "Wir unterstützen Arbeitgeber in Deutschland und Europa dabei, qualifizierte internationale Fachkräfte durch strukturiertes Recruiting, relocation-bewusste Kandidatenbetreuung und zuverlässige Workforce-Lösungen zu gewinnen.",
+        "hero.ctaPrimary": "Gespräch starten",
+        "hero.ctaSecondary": "Leistungen ansehen",
+        "film.kicker": "Modernes Recruiting-Erlebnis",
+        "film.title": "Vom ersten Kontakt bis zur erfolgreichen Integration.",
+        "film.copy": "Talorynex bringt Arbeitgeber und internationale Fachkräfte durch einen strukturierten, menschlichen und zukunftsorientierten Recruiting-Prozess zusammen. Der Weg ist klar: Bedarf verstehen, passende Menschen finden, den Wechsel unterstützen und Talente ins Team integrieren.",
+        "film.employers": "Für Arbeitgeber",
+        "film.candidates": "Für Kandidaten",
+        "film.videoTitle": "Globale Talente, verlässlich begleitet.",
+        "film.videoCopy": "Eine hochwertige visuelle Geschichte über internationales Recruiting, Relocation-Support und langfristigen Workforce-Erfolg.",
+        "about.kicker": "Über uns",
+        "about.title": "Professionelles Recruiting für internationale Teams.",
+        "about.copy": "Talorynex International Recruiting ist ein Recruiting-Partner aus München, der Unternehmen mit motivierten und qualifizierten Fachkräften aus verschiedenen Ländern verbindet. Wir unterstützen Arbeitgeber bei der gezielten Talentgewinnung und begleiten Kandidaten durch einen klaren, respektvollen Bewerbungsprozess.",
+        "about.panel": "Unsere Arbeit verbindet Marktverständnis, Kandidatenbetreuung und praktische Unterstützung für die Belegschaft. Von der ersten Suche bis zur Onboarding-Vorbereitung hilft Talorynex beiden Seiten, mit Sicherheit, Klarheit und langfristigem Blick voranzukommen.",
+        "about.statOneValue": "Global",
+        "about.statOneLabel": "Talent-Reichweite",
+        "about.statTwoValue": "München",
+        "about.statTwoLabel": "Standort Deutschland",
+        "about.statThreeValue": "Ganzheitlich",
+        "about.statThreeLabel": "Recruiting-Support",
+        "focus.kicker": "Unser Fokus",
+        "focus.title": "Recruiting, das organisiert, persönlich und international wirkt.",
+        "focus.copy": "Jeder Einstellungsprozess braucht Vertrauen, Tempo und praktische Unterstützung. Diese visuellen Schwerpunkte zeigen, wie Talorynex Arbeitgeber und Kandidaten in den Phasen internationaler Rekrutierung begleitet.",
+        "focus.cardOneTitle": "Partnerschaften mit Arbeitgebern",
+        "focus.cardOneCopy": "Enge Zusammenarbeit mit Unternehmen, um Einstellungsbedarf, Rollenanforderungen und das passende Kandidatenprofil zu verstehen.",
+        "focus.cardTwoTitle": "Kandidatenbetreuung",
+        "focus.cardTwoCopy": "Begleitung bei Bewerbungen, Interviews, Relocation-Vorbereitung und den ersten Schritten in einer neuen Arbeitsumgebung.",
+        "focus.cardThreeTitle": "Workforce Solutions",
+        "focus.cardThreeCopy": "Flexible und verlässliche Unterstützung beim Aufbau qualifizierter Teams in verschiedenen Branchen und internationalen Talentmärkten.",
+        "employers.kicker": "Arbeitgeber",
+        "employers.title": "Zuverlässige Recruiting-Unterstützung für wachsende Unternehmen.",
+        "employers.copy": "Wir helfen Arbeitgebern, qualifizierte internationale Kandidaten zu erreichen und einen strukturierten Recruiting-Prozess von der Profildefinition bis zur Onboarding-Vorbereitung zu steuern.",
+        "employers.cardOneTitle": "Recruiting-Lösungen",
+        "employers.cardOneCopy": "Gezielte Suche und Auswahl für Positionen, bei denen qualifizierte und motivierte Talente entscheidend für Kontinuität und Wachstum sind.",
+        "employers.cardTwoTitle": "Talent Acquisition",
+        "employers.cardTwoCopy": "Kandidatenansprache, Screening, Shortlists und Kommunikation, die Recruiting-Pipelines klar und professionell halten.",
+        "employers.cardThreeTitle": "Workforce Support",
+        "employers.cardThreeCopy": "Praktische Koordination rund um Einstellungsbedarf, Kandidatenbereitschaft, Dokumente und erfolgreiche Integration.",
+        "employers.cardFourTitle": "Internationales Recruiting",
+        "employers.cardFourCopy": "Grenzüberschreitende Recruiting-Unterstützung für Arbeitgeber, die vielfältige und verlässliche Teams in Deutschland und Europa aufbauen.",
+        "candidates.kicker": "Kandidaten",
+        "candidates.title": "Begleitung für Fachkräfte, die den nächsten Schritt gehen möchten.",
+        "candidates.copy": "Talorynex unterstützt internationale Kandidaten mit einem klaren Weg zu passenden Chancen, stärkeren Bewerbungen und einem reibungsloseren Übergang in neue Arbeitsumgebungen.",
+        "candidates.cardOneTitle": "Karrierechancen",
+        "candidates.cardOneCopy": "Zugang zu relevanten Stellen bei Arbeitgebern, die qualifizierte internationale Fachkräfte suchen.",
+        "candidates.cardTwoTitle": "Relocation-Unterstützung",
+        "candidates.cardTwoCopy": "Hilfreiche Orientierung für Kandidaten, die sich auf Umzug und Arbeit in Deutschland vorbereiten.",
+        "candidates.cardThreeTitle": "Bewerbungsunterstützung",
+        "candidates.cardThreeCopy": "Unterstützung bei Kandidatenprofilen, Dokumentenbereitschaft und Interviewvorbereitung.",
+        "candidates.cardFourTitle": "Integrationsbegleitung",
+        "candidates.cardFourCopy": "Praktische Orientierung für Arbeitsplatzanforderungen und die Eingewöhnung in ein neues professionelles Umfeld.",
+        "services.kicker": "Leistungen",
+        "services.title": "Strukturierte Leistungen für Arbeitgeber und Kandidaten.",
+        "services.copy": "Unser Leistungsmodell macht internationale Rekrutierung vom ersten Gespräch an planbarer, transparenter und menschlicher.",
+        "services.cardOneTitle": "Internationale Personalvermittlung",
+        "services.cardOneCopy": "Ganzheitliche Recruiting-Unterstützung für Unternehmen, die qualifizierte Fachkräfte außerhalb lokaler Märkte suchen.",
+        "services.cardTwoTitle": "Talent Sourcing",
+        "services.cardTwoCopy": "Gezielte Sourcing-Strategien, die motivierte Kandidaten passend zu Rolle und Arbeitgeberanforderungen identifizieren.",
+        "services.cardThreeTitle": "Workforce Solutions",
+        "services.cardThreeCopy": "Workforce-Unterstützung, die Unternehmen hilft, Talente sicher zu planen, einzustellen und zu integrieren.",
+        "services.cardFourTitle": "Arbeitgeberberatung",
+        "services.cardFourCopy": "Praktische Beratung zu internationalen Einstellungsprozessen, Kandidatenerwartungen und Recruiting-Positionierung.",
+        "contact.kicker": "Kontakt",
+        "contact.title": "Lassen Sie uns über Ihre Recruiting-Ziele sprechen.",
+        "contact.emailLabel": "E-Mail:",
+        "contact.location": "Standort: München, Deutschland",
+        "contact.cta": "Talorynex kontaktieren",
+        "footer.rights": "© 2026 Talorynex International Recruiting. Alle Rechte vorbehalten."
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-lang]");
+    const translatableElements = document.querySelectorAll("[data-i18n]");
+    const metaDescription = document.querySelector('meta[name="description"]');
+
+    function applyLanguage(language) {
+      const dictionary = translations[language] || translations.en;
+      document.documentElement.lang = language === "bs" ? "bs" : language;
+      document.title = dictionary.metaTitle;
+      metaDescription.setAttribute("content", dictionary.metaDescription);
+
+      translatableElements.forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      languageButtons.forEach((button) => {
+        const isActive = button.dataset.lang === language;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      localStorage.setItem("talorynex-language", language);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+
+    const savedLanguage = localStorage.getItem("talorynex-language");
+    applyLanguage(translations[savedLanguage] ? savedLanguage : "en");
+
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector("#primary-menu");
 
