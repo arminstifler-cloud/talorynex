@@ -76,15 +76,16 @@
       gap: 12px;
       color: var(--white);
       font-weight: 800;
+      font-size: 0.98rem;
       letter-spacing: 0;
     }
 
     .brand img {
-      width: 72px;
-      height: 46px;
+      width: 64px;
+      height: 40px;
       border-radius: 6px;
       background: var(--white);
-      padding: 4px 7px;
+      padding: 4px 6px;
       object-fit: contain;
     }
 
@@ -134,10 +135,10 @@
       display: inline-flex;
       align-items: center;
       min-height: 40px;
-      padding: 0 12px;
+      padding: 0 10px;
       border-radius: var(--radius);
       color: rgba(255, 255, 255, 0.9);
-      font-size: 0.94rem;
+      font-size: 0.9rem;
       font-weight: 700;
       transition: background 180ms ease, color 180ms ease;
     }
@@ -187,14 +188,14 @@
 
     .hero {
       position: relative;
-      min-height: 92vh;
+      min-height: 760px;
       display: flex;
       align-items: center;
       overflow: hidden;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(7, 27, 54, 0.82) 0%, rgba(7, 27, 54, 0.54) 42%, rgba(7, 27, 54, 0.08) 100%),
-        url("banner.png") 72% center / cover no-repeat;
+        linear-gradient(90deg, rgba(7, 27, 54, 0.94) 0%, rgba(7, 27, 54, 0.78) 34%, rgba(7, 27, 54, 0.22) 72%, rgba(7, 27, 54, 0.1) 100%),
+        url("banner.png") center / cover no-repeat;
     }
 
     .hero::after {
@@ -214,24 +215,18 @@
       max-width: 1180px;
       width: 100%;
       margin: 0 auto;
-      padding: 140px 24px 110px;
+      padding: 150px 24px 120px;
     }
 
     .hero-content {
-      max-width: 760px;
-      animation: riseIn 700ms ease both;
-    }
-
-    .hero-logo {
-      width: min(310px, 82vw);
-      height: auto;
-      margin-bottom: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      max-width: 650px;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
-      object-fit: contain;
-      padding: 14px;
+      background: rgba(7, 27, 54, 0.58);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+      backdrop-filter: blur(12px);
+      animation: riseIn 700ms ease both;
     }
 
     .eyebrow {
@@ -250,7 +245,7 @@
 
     h1 {
       margin-top: 18px;
-      font-size: clamp(3.4rem, 9vw, 6.8rem);
+      font-size: clamp(3rem, 7vw, 5.7rem);
       line-height: 0.95;
       font-weight: 900;
       letter-spacing: 0;
@@ -864,18 +859,18 @@
       }
 
       .hero {
-        min-height: 820px;
+        min-height: 760px;
         background:
-          linear-gradient(180deg, rgba(7, 27, 54, 0.88) 0%, rgba(7, 27, 54, 0.78) 56%, rgba(7, 27, 54, 0.5) 100%),
-          url("banner.png") 68% center / cover no-repeat;
+          linear-gradient(180deg, rgba(7, 27, 54, 0.92) 0%, rgba(7, 27, 54, 0.78) 58%, rgba(7, 27, 54, 0.36) 100%),
+          url("banner.png") 64% center / cover no-repeat;
       }
 
       .hero-inner {
-        padding-top: 120px;
+        padding-top: 112px;
       }
 
-      .hero-logo {
-        width: min(250px, 78vw);
+      .hero-content {
+        padding: 26px;
       }
 
       .section {
@@ -958,7 +953,6 @@
     <section class="hero" aria-label="Talorynex International Recruiting">
       <div class="hero-inner">
         <div class="hero-content">
-          <img class="hero-logo" src="logo.png" alt="Talorynex logo">
           <p class="eyebrow" data-i18n="hero.eyebrow">International Recruitment & Workforce Solutions</p>
           <h1>TALORYNEX</h1>
           <p class="hero-subtitle" data-i18n="hero.subtitle">Connecting Talent. Building Futures.</p>
